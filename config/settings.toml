@@ -1,0 +1,10 @@
+[development]
+
+    [development.logs]
+        LEVEL = "DEBUG"
+        FORMAT = "[%(asctime)s] #%(levelname)-8s %(filename)s:%(lineno)d - %(name)s - %(message)s"
+
+    [development.nats]
+        SUBJECT = "mailing.message"
+        STREAM = "mailing_message"
+        DURABLE_NAME = "mailing_consumer"
