@@ -13,8 +13,7 @@ from app.service.nats.mail_service import send_mailing_message
 async def message_input_handler(
     message: Message, widget: MessageInput, dialog_manager: DialogManager
 ):
-    data = await dialog_manager.load_data()
-    js = data.get("middleware_data").get("js")
+    js = await dialog_manager.middleware_data.get("js")
     if message.photo:
         photo_id = message.photo[-1].file_id
         text = message.caption
